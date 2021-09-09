@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geberit szett árazó</title>
+  <style>
+    p {
+      display: inline;
+    }
+    div {
+      margin: 10px 0px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>Geberit Duofix Basic WC tartály </p><code>111.153.00.0</code>
+    <input type="number" id="tartaly" value="0"><code> 10% </code><code class="tartalyAr"></code>
+  </div>
+  <div>
+    <p>Geberit Delta 20 Fehér vagy Fényes króm </p><code>115.100.11.1 / 115.100.21.1</code>
+    <input type="number" id="nyomolap" value="0"><code> 15% </code><code class="nyomolapAr"></code>
+  </div>
+  <div>
+    <p>Alföldi fali WC csésze </p><code>7S65 10 01</code>
+    <input type="number" id="wc" value="0"><code> 10% </code><code class="wcAr"></code>
+  </div>
+  <div>
+    <p>WC ülőke Clivia </p><code>CLIVIA</code>
+    <input type="number" id="uloke" value="0"><code> 15% </code><code class="ulokeAr"></code>
+  </div>
+  <div>
+    <button>Számol</button>
+    <code class="vegosszeg"></code>
+  </div>
+  <script>
+document.querySelector('button').addEventListener('click', () => {
+  document.querySelector('.vegosszeg').innerHTML = (parseInt(document.querySelector('#tartaly').value) * 1.1) + (parseInt(document.querySelector('#nyomolap').value) * 1.15) + (parseInt(document.querySelector('#wc').value) * 1.1) + (parseInt(document.querySelector('#uloke').value) * 1.15);
+  document.querySelector('.tartalyAr').innerHTML = (parseInt(document.querySelector('#tartaly').value) * 1.1);
+  document.querySelector('.nyomolapAr').innerHTML = (parseInt(document.querySelector('#nyomolap').value) * 1.5);
+  document.querySelector('.wcAr').innerHTML = (parseInt(document.querySelector('#wc').value) * 1.1);
+  document.querySelector('.ulokeAr').innerHTML = (parseInt(document.querySelector('#uloke').value) * 1.5);
+
+})
+
+  </script>
+</body>
+</html>
